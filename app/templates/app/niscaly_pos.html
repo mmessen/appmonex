@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+{% block body %}
+<header>
+<h1>NISCALY</h1>
+</header>
+<ul>
+{% load humanize %}
+<table>
+<tr>
+    <th>TICKER</th>
+    <th>MONTO</th>
+</tr>
+{% for tick in pos %}
+
+<tr>
+<td>{{ tick.0 }}</td>
+{% load humanize %}
+<td>{{ tick.1|floatformat:2|intcomma }}</td>
+</tr>
+
+{% endfor %}
+
+<tr>
+    <th>Total</th>
+    {% for t in total %}
+    <td>{{ t.1|floatformat:2|intcomma }}</td>
+    </tr>
+    
+    {% endfor %}
+</table>
+
+
+</ul>
+
+{% endblock %}

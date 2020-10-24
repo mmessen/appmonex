@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+{% block body %}
+
+<header>
+<h1>Cartera Equity</h1>
+</header>
+ 
+
+<ul>
+
+
+<table>
+<tr>
+    <th>Ticker</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Sector 1</th>
+    <th>Sector 2</th>
+</tr>
+{% for equity in equities %}
+
+<tr>
+<td style="width:90px">{{ equity.equity }}</td>
+<td style="width:300px">{{ equity.nombre }}</td>
+<td style="width:500px">{{ equity.descripcion }}</td>
+<td>{{ equity.sector1 }}</td>
+<td>{{ equity.sector2 }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+</ul>
+
+{% endblock %}

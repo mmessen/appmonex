@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% block body %}
+
+<header>
+<h1>NISCALY</h1>
+</header>
+<ul>
+
+<table>
+<tr>
+    <th>BANCO</th>
+    <th>TICKER</th>
+    <th>CANTIDAD</th>
+    <th>PRECIO COMPRA</th>
+</tr>
+{% for tick in posicion %}
+
+<tr>
+<td>{{ tick.banco }}</td>
+<td>{{ tick.equity }}</td>
+<td>{{ tick.Cantidad }}</td>
+<td>{{ tick.precio_compra }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+</ul>
+
+{% endblock %}
